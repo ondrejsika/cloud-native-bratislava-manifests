@@ -4,7 +4,7 @@ metadata:
   name: cloud-native-bratislava
 spec:
   revisionHistoryLimit: 0
-  replicas: 2
+  replicas: 4
   selector:
     matchLabels:
       app: cloud-native-bratislava
