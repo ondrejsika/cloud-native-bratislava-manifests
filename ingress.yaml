@@ -8,10 +8,10 @@ spec:
   ingressClassName: nginx
   tls:
     - hosts:
-        - cloud-native-bratislava.k8s.sikademo.com
-      secretName: cloud-native-bratislava.k8s.sikademo.com
+        - cloud-native-bratislava-manifests.k8s.sikademo.com
+      secretName: cloud-native-bratislava-manifests.k8s.sikademo.com
   rules:
-    - host: cloud-native-bratislava.k8s.sikademo.com
+    - host: cloud-native-bratislava-manifests.k8s.sikademo.com
       http:
         paths:
           - path: /
