@@ -1,0 +1,23 @@
+apiVersion: networking.k8s.io/v1
+kind: Ingress
+metadata:
+  name: cloud-native-bratislava
+  annotations:
+    cert-manager.io/cluster-issuer: letsencrypt
+spec:
+  ingressClassName: nginx
+  tls:
+    - hosts:
+        - cloud-native-bratislava.k8s.sikademo.com
+      secretName: cloud-native-bratislava.k8s.sikademo.com
+  rules:
+    - host: cloud-native-bratislava.k8s.sikademo.com
+      http:
+        paths:
+          - path: /
+            pathType: Prefix
+            backend:
+              service:
+                name: cloud-native-bratislava
+                port:
+                  number: 80

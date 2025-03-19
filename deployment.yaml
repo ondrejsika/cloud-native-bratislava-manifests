@@ -1,0 +1,30 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: cloud-native-bratislava
+spec:
+  revisionHistoryLimit: 0
+  replicas: 2
+  selector:
+    matchLabels:
+      app: cloud-native-bratislava
+  template:
+    metadata:
+      labels:
+        app: cloud-native-bratislava
+    spec:
+      containers:
+        - name: main
+          image: ghcr.io/sikalabs/hello-world-server
+          ports:
+            - containerPort: 8000
+          env:
+            - name: TEXT
+              value: "Hello Bratislava!"
+          resources:
+            requests:
+              cpu: 20m
+              memory: 20Mi
+            limits:
+              cpu: 100m
+              memory: 40Mi

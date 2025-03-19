@@ -1,0 +1,10 @@
+apiVersion: v1
+kind: Service
+metadata:
+  name: cloud-native-bratislava
+spec:
+  selector:
+    app: cloud-native-bratislava
+  ports:
+    - port: 80
+      targetPort: 8000
